@@ -25,6 +25,7 @@ function displayMeals() {
 
     for (let i = 0; i < getMealLength(); i++){
         let node = document.createElement("li");
+        node.className = "list-group-item";
 
         let mealName = document.createElement("div");
         mealName.textContent = getMealNameById(i) + " : " + getMealTotalPriceById(i);
