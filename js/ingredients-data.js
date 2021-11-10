@@ -23,21 +23,3 @@ let ingredients = [
     {idIng:'21',name:'Yahourt', local:'0', prix:'0.50'},
     {idIng:'22',name:'Oignons', local:'1', prix:'0.50'},
 ];
-
-// Tous les getters pour ne pas accéder aux données directement !
-
-function getIngredientsLength() {
-    return ingredients.length;
-}
-
-function getIngredientNameById(id){
-    return ingredients[id].name;
-}
-
-function getIngredientPriceById(id) {
-    return parseFloat(ingredients[id].prix);
-}
-
-function getIngredientLocalById(id) {
-    return ingredients[id].local == 0 ? "Non" : "Oui";
-}

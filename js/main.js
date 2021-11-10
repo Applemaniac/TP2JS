@@ -1,47 +1,25 @@
-function displayIngredients() {
-    let tab = document.querySelector("div#table > table > tbody");
-
-    for (let i = 0; i < getIngredientsLength(); i++){
-        let node = document.createElement("tr");
-
-        let name = document.createElement("td");
-        name.textContent = getIngredientNameById(i);
-        name.style.textAlign = "center";
-        let local = document.createElement("td");
-        local.textContent = getIngredientLocalById(i);
-        let price = document.createElement("td");
-        price.textContent = getIngredientPriceById(i) + "€";
-
-        node.appendChild(name);
-        node.appendChild(local);
-        node.appendChild(price);
-
-        tab.appendChild(node);
-    }
-}
-
 function displayMeals() {
     let list = document.querySelector("div#list > ul");
 
-    for (let i = 0; i < getMealLength(); i++){
+    for (let i = 0; i < Meal.getMealLength(); i++){
         let node = document.createElement("li");
         node.className = "list-group-item";
 
         let mealName = document.createElement("div");
-        mealName.textContent = getMealNameById(i) + " : " + getMealTotalPriceById(i);
+        mealName.textContent = Meal.getMealNameById(i) + " : " + Meal.getMealTotalPriceById(i);
         mealName.style.fontWeight = "bold";
 
         let mealIngredientsList = document.createElement("div");
         mealIngredientsList.textContent = "Ingrédients : ";
 
 
-        for (let q = 0; q < getMealIngredientsById(i).length; q++){
-            mealIngredientsList.textContent += q === getMealIngredientsById(i).length - 1 ? getIngredientNameById(getMealIngredientsById(i)[q]) : getIngredientNameById(getMealIngredientsById(i)[q]) + ", ";
+        for (let q = 0; q < Meal.getMealIngredientsById(i).length; q++){
+            mealIngredientsList.textContent += q === Meal.getMealIngredientsById(i).length - 1 ? Ingredients.getIngredientNameById(Meal.getMealIngredientsById(i)[q]) : Ingredients.getIngredientNameById(Meal.getMealIngredientsById(i)[q]) + ", ";
         }
         mealIngredientsList.style.fontStyle = "italic";
 
         let mealPreparationTime = document.createElement("div");
-        mealPreparationTime.textContent = "Temps de préparation estimé : " + getMealPreparationTimeById(i) + " minutes";
+        mealPreparationTime.textContent = "Temps de préparation estimé : " + Meal.getMealPreparationTimeById(i) + " minutes";
         mealPreparationTime.style.fontStyle = "italic";
 
 
@@ -58,5 +36,5 @@ function displayMeals() {
     }
 }
 
-displayIngredients();
+Tableau.displayIngredients();
 displayMeals();
