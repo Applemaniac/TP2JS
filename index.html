@@ -5,13 +5,16 @@
         <title>TP2 - Javascript - 2020/2021</title>
         <link rel="stylesheet" type="text/css" href="./css/main.css" />
         <link rel="stylesheet" type="text/css" href="./css/table.css" />
+        <!-- DATA -->
+        <script src="./js/ingredients-data.js"></script>
+        <script src="./js/meal-data.js"></script>
     </head>
     <body>
         <div id="header">
             <h1>Javascript <span class="subtitle">Tuto Plats étudiants</span></h1>
         </div>
 
-        <div id="content">
+        <div id="contentMeal">
             <h2>
                 Liste des plats : 
             </h2>
@@ -21,23 +24,29 @@
             </div>
         </div>
 
-        <div id="content">
+        <div id="contentIngredient">
             <h2>
                 Tableau des Ingrédients : 
             </h2>
             <div id="table">
                 <table>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Local ?</th>
-                        <th>Prix</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Local ?</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
 
         <div id="footer">
-            <p>&copy; Nom1 - Nom2 - CIR 2 - 2020/2021</p>
+            <p>&copy; Cuvelier Cyril - Losson Simon - CIR² - 2020/2021</p>
         </div>
+        <!-- DOM -->
+        <script src="./js/main.js"></script>
     </body>
 </html>

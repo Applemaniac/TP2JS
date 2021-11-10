@@ -8,3 +8,35 @@ let meal = [
     { idMeal:'6', name: 'Pancakes', preparationTime: '14', ingredients: ['21','8','20','5','2'], preparationPrice: '5' },
     { idMeal:'7', name: 'Brownies', preparationTime: '45', ingredients: ['5','8','9','10','11','20'], preparationPrice: '8' },
 ];
+
+// Tous les getters pour ne pas accéder aux données directement !
+
+function getMealLength() {
+    return meal.length;
+}
+
+function getMealNameById(id){
+    return meal[id].name;
+}
+
+function getMealPreparationTimeById(id) {
+    return meal[id].preparationPrice;
+}
+
+function getMealIngredientsById(id) {
+    return meal[id].ingredients;
+}
+
+function getMealPreparationPriceById(id) {
+    return parseFloat(meal[id].preparationPrice);
+}
+
+function getMealTotalPriceById(id) {
+    let ingredients = getMealIngredientsById(id);
+    let totalPrice = getMealPreparationPriceById(id);
+    for (let i = 0; i < ingredients.length; i++){
+        totalPrice += getIngredientPriceById(ingredients[i]);
+    }
+    return totalPrice + "€";
+}
+

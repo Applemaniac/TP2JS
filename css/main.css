@@ -44,7 +44,7 @@ body {
     font-size: 12px;
 }
 
-#content {
+#contentIngredient, #contentMeal {
     width: 66%;
     margin: 0 auto;
 }
