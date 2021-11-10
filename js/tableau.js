@@ -1,28 +1,28 @@
 let Tableau = (function (){
     return{
         displayIngredients : () => {
-            let tab = Tab.get("div#table > table > tbody");
+            let tab = Utils.get("div#table > table > tbody");
             let length = Ingredients.getIngredientsLength();
 
             for (let i = 0; i < length; i++){
 
-                let tr = Tr.create();
+                let tr = Utils.create("tr");
 
-                let name = Td.create();
-                let local = Td.create();
-                let price = Td.create();
+                let name = Utils.create("td");
+                let local = Utils.create("td");
+                let price = Utils.create("td");
 
-                Td.text(name, Ingredients.getIngredientNameById(i));
-                Td.text(local, Ingredients.getIngredientLocalById(i));
-                Td.text(price, Ingredients.getIngredientPriceById(i).toFixed(2) + "€");
+                Utils.addText(name, Ingredients.getIngredientNameById(i));
+                Utils.addText(local, Ingredients.getIngredientLocalById(i));
+                Utils.addText(price, Ingredients.getIngredientPriceById(i).toFixed(2) + "€");
 
-                Td.textAlign(name, "center");
-                Td.textAlign(local, "center");
-                Td.textAlign(price, "center");
+                Utils.textAlign(name, "center");
+                Utils.textAlign(local, "center");
+                Utils.textAlign(price, "center");
 
-                Tr.addChild(tr, name, local, price);
+                Utils.addChild(tr, name, local, price);
 
-                Tab.addChild(tab, tr);
+                Utils.addChild(tab, tr);
             }
         }
     }
